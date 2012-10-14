@@ -21,21 +21,21 @@ func main() {
 	// Copy stdin to stdout, turning red when CMake Error lines appear.
 	r := bufio.NewReader(os.Stdin)
 	for {
-		l, err := r.ReadString('\n')
+		line, err := r.ReadString('\n')
 		if err != nil {
 			break;
 		}
-		if l[0] != ' ' {
-			if strings.Contains(l, "CMake Error") {
+		if line[0] != ' ' {
+			if strings.Contains(line, "CMake Error") {
 				fmt.Print(FgRed)
-			} else if strings.Contains(l, "CMake Warning") {
+			} else if strings.Contains(line, "CMake Warning") {
 				fmt.Print(FgYellow)
 			} else {
 				fmt.Print(Reset)
 			}
 
 		}
-		fmt.Print(l)
+		fmt.Print(line)
 	}
 }
 
