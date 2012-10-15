@@ -6,8 +6,7 @@ Highlight errors and warnings in the output of CMake.
 Installing
 ----------
 
-    go build
-    sudo mv colorize_cmake_output /usr/local/bin
+    go get github.com/ijt/colorize_cmake_output
     echo '
 
     function cm() {
