@@ -20,6 +20,7 @@ func main() {
 
 	// Copy stdin to stdout, turning red when CMake Error lines appear.
 	r := bufio.NewReader(os.Stdin)
+	defer fmt.Print(Reset)
 	for {
 		line, err := r.ReadString('\n')
 		if err != nil {
