@@ -25,7 +25,7 @@ func main() {
 		if err != nil {
 			break;
 		}
-		if line[0] != ' ' {
+		if len(line) > 1 && line[0] != ' ' {
 			if strings.Contains(line, "CMake Error") {
 				fmt.Print(FgRed)
 			} else if strings.Contains(line, "CMake Warning") {
